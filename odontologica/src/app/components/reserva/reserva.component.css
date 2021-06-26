@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'fuente1';
+    src: url(../../../assets/fuentes/Merienda-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'fuente2';
+    src: url(../../../assets/fuentes/Cambay-Regular.ttf);
+}
+
+.reservatit, 
+.sp1, 
+.sp2 {
+    text-align: center;
+    font-family: 'fuente1'; 
+}
+
+.sp1 {
+    margin-top: -15px; 
+    font-size: 25px; 
+    color: #0043b7;
+}
+
+.sp2 {
+    font-family: 'fuente2'; 
+    padding: 13px 0 0 5px;  
+    font-size: 18px; 
+    font-weight: bold;
+}

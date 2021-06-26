@@ -1,0 +1,63 @@
+<div>
+    <!-- <div #laimagen class="laimagen">
+        <img [src]="imagen" alt="odontolica remotti">
+    </div> -->
+    <div #ingresos class="divingresos">
+        <form [formGroup]="user" (ngSubmit)="logeando()" class="miform">
+            <div #divconsul class="divconsul">
+                <div #miconsul>
+                    <label for="consul">Escriba su Consulta: </label>
+                    <br>
+                    <textarea #consul formControlName='consul' class="consul"></textarea>
+                </div>
+            </div> 
+            <div #divpaci class="divpaci">
+                <div #mipaci class="mipaci"> 
+                    <input type="radio" formControlName="paci" name="paci" value="si" #paci class="soypaci">
+                    <span class="soyp">Soy el paciente</span>  
+                    <br>
+                    <input type="radio" formControlName="paci" name="paci" value="no" #nopaci class="soypaci"> 
+                    <span class="nosoyp">No soy paciente</span> 
+                </div> 
+            </div>
+            <div #divinputs class="divinputs"> 
+                <div #divdni>
+                    <label for="dni">DNI: &nbsp;</label> 
+                    <input type="text" #dni formControlName="dni" autocomplete="off">
+                    <div *ngIf="f.dni.touched && f.dni.invalid">
+                        <div *ngIf="f.dni.errors">DNI de 8 digitos.</div>
+                    </div>
+                </div>
+                <div #divtelefono> 
+                    <label for="telefono">Celular: &nbsp;</label> 
+                    <input type="text" #telefono formControlName="telefono" autocomplete="off">
+                    <div *ngIf="f.telefono.touched && f.telefono.invalid">
+                        <div *ngIf="f.telefono.errors">Llene solo números.</div>
+                    </div>
+                </div> 
+            </div>
+            <br>
+            <div #divbotones class="divbotones"> 
+                <div> 
+                    <input type="submit" value="ENVIAR" #enviar class="enviar" [disabled]="!user.valid">
+                </div>
+                <br>
+                <div>
+                    <input type="button" value="limpiar" (click)="limpia()" #limpiar class="limpiar">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div #menload class="menload"> </div> 
+    <div #mensajelog class="mensajelog">
+        <div #mentit class="mentit"></div>
+        <div #mencue class="mencue"></div>
+        <div #menreg class="menreg">
+            <button #regresar class="regresar">⇠ REGRESAR</button> 
+        </div>
+        <div #mennue class="mennue">
+            <button #rehacer class="rehacer">REINTENTAR</button>
+        </div>
+    </div>       
+    <br>
+</div>

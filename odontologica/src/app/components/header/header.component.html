@@ -1,0 +1,53 @@
+<div>
+    <div id="laimagen">
+        <img [src]="imagen" alt="odontolica remotti">
+    </div>
+    <hr> 
+    <div id="ingresos">
+        <form [formGroup]="user" (ngSubmit)="logeando()">
+            <div id="divinputs"> 
+                <div id="divnombres"> 
+                    <label for="nombres">Nombres: &nbsp;</label> 
+                    <input type="text" id="nombres" formControlName="nombres" autocomplete="off">
+                    <div *ngIf="f.nombres.touched && f.nombres.invalid">
+                        <div *ngIf="f.nombres.errors">Llene el campo.</div>
+                    </div>
+                </div>
+                <div id="divapellidos">
+                    <label for="apellidos">Apellidos: &nbsp;</label> 
+                    <input type="text" id="apellidos" formControlName="apellidos" autocomplete="off">
+                    <div *ngIf="f.apellidos.touched && f.apellidos.invalid">
+                        <div *ngIf="f.apellidos.errors">Llene el campo.</div>
+                    </div>
+                </div>
+                <div id="divdni">
+                    <label for="dni">DNI: &nbsp;</label> 
+                    <input type="text" id="dni" formControlName="dni" autocomplete="off">
+                    <div *ngIf="f.dni.touched && f.dni.invalid">
+                        <div *ngIf="f.dni.errors">DNI de 8 digitos.</div>
+                    </div>
+                </div>
+                <div id="divtelefono">
+                    <label for="telefono">Teléfono: &nbsp;</label> 
+                    <input type="text" id="telefono" formControlName="telefono" autocomplete="off">
+                    <div *ngIf="f.telefono.touched && f.telefono.invalid">
+                        <div *ngIf="f.telefono.errors">Llene solo números.</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="divbotones"> 
+                <div> 
+                    <input type="submit" value="ENVIAR" id="enviar" [disabled]="!user.valid">
+                </div>
+                <br>
+                <div>
+                    <input type="button" value="limpiar" id="limpiar" (click)="limpiar()">
+                </div>
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

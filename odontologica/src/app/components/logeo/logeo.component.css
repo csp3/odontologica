@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'bel3';
+    src: url(/assets/fuentes/NotoSansJP-Regular.otf);
+}
+
+*{
+    font-family: bel3,arial;
+}
+
+.laimagen img {
+    width: 340px;
+}
+
+.laimagen,
+.divinputs,
+.divbotones {
+    text-align: center;
+}
+
+.divinputs {
+	display: block; 
+}
+
+.divinputs input {
+    height: 25px;
+    width: 200px;
+    margin-top: 7px; 
+    font-size: 15px; 
+    border-radius: 3px; 
+}
+
+.divbotones {
+	display: block; 
+}
+
+.divinputs div label {
+    display: inline-block;
+    width: 85px; 
+    text-align: right;
+}
+
+.divenviar input {
+    width: 100px;
+    background-color: darkblue;
+}
+
+.enviar {
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:2px;
+	border:1px solid #4e6096;
+	color:#ffffff;
+	font-size:14px;
+	padding:10px 35px;
+	text-shadow:0px 1px 0px #283966;
+	cursor: pointer;
+}
+.enviar:hover {
+	background:linear-gradient(to bottom, #7c95b3 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+
+.limpiar {
+	background:linear-gradient(to bottom, #78bdc2 5%, #479e87 100%);
+	background-color:#7892c2;
+	border-radius:2px;
+	border:1px solid #939496;
+	color:#ffffff;
+	font-size:14px;
+	padding:5px 20px;
+	text-shadow:0px 1px 0px #286666;
+	cursor: pointer;
+}
+.limpiar:hover {
+	background:linear-gradient(to bottom, #a3b8d3 5%, #537e85 100%);
+	background-color:#476e9e;
+}
+
+.divconsul {
+	font-size: 14px; 
+	font-weight: bold; 
+	text-align: center; 
+}
+
+.consul {
+	width: 285px;
+	border-radius: 3px; 
+	height: 170px; 
+}
+
+.menload { 
+	background-image: url(../../../assets/imagenes/load.gif); 
+	background-size: contain;
+	background-repeat: no-repeat; 
+	width:  200px; 
+	height: 200px; 
+	margin: 0 auto; 
+	display: none;  
+}
+
+.mensajelog {
+	width:  250px; 
+	height: 200px; 
+	display: none; 
+	margin: 0 auto; 
+	font-size: 15px; 
+	background-color: #a9f0d7; 
+}
+
+.mentit {
+	font-weight: bold; 
+	text-align: center;
+	background-color: #f1ffc0; 
+	padding: 4px 5px;
+	color: #38425f;
+}
+
+.mencue {
+	font-size: 14px; 
+	text-align: left; 
+	padding-left: 10px; 
+}
+
+.menreg {
+	display: none;
+	text-align: center; 
+}
+
+.mennue {
+	display: none; 
+	text-align: center;
+}
+
+.regresar,
+.rehacer {
+	cursor: pointer; 
+	border: 2px solid #8d9977;
+	border-radius: 3px;
+	padding: 5px 20px;
+	color: #fff;
+	background-color: #1e2e5a; 
+    margin: 0 auto; 
+}
+
+.rehacer {
+	background-color: #4a5061;
+	color: #fff;
+}
+
+.mipaci {
+	margin: 0 auto; 
+	width: 280px;
+	padding-top: 8px; 
+	padding-bottom: 8px; 
+}
+
+.soypaci {
+	margin-bottom: 15px; 
+	cursor: pointer; 
+}
+

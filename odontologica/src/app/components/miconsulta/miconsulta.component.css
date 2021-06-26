@@ -1,0 +1,19 @@
+.divMiconsulta {
+    text-align: center;
+}
+
+.tit {
+    font-weight: bold; 
+    font-size: 14px; 
+}
+
+.divcon {
+    border: 1px solid #8f3c3c;  
+    font-size: 12px; 
+    width: 290px; 
+    height: 200px; 
+    border-radius: 2px;
+    margin: 0 auto; 
+    text-align: left; 
+    padding: 3px; 
+}

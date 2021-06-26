@@ -1,0 +1,241 @@
+@font-face {
+	font-family: 'bel1';
+    src: url(../../../assets/fuentes/AlegreyaSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'bel2';
+    src: url(../../../assets/fuentes/Nunito-SemiBold.ttf);
+}
+
+.contenedor {
+    font-family: 'bel1'; 
+    background-color: #6DB0C0;
+}
+
+.imgsup {
+    text-align: center; 
+    background-color: #ae58ff;
+    color: #ffffff;
+}
+
+.imgsup :nth-child(1) {
+    font-size: 27px;  
+}
+
+.imgsup :nth-child(3) {
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+.imgcen { 
+    background-color: #6DB0C0;
+}
+
+.divimg1 {
+    background-image: url(../../../assets/imagenes/den2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 500px;  
+    height: 290px; 
+    margin: 0 auto; 
+}
+
+.divimgent {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+    width: 500px; 
+    height: 95px; 
+    margin: 0 auto; 
+    background-color: #ffffff; 
+}
+
+.divimg2 {
+    background-image: url(../../../assets/imagenes/odonto2.png); 
+    background-size: 250px auto;
+    background-repeat: no-repeat; 
+    width: 250px;
+    margin: 0 auto;
+}
+
+.divbot {
+    background-color: #ffffff;
+}
+
+.entrar {
+	font-family: 'bel1';
+	box-shadow:#97ed96 0px 3px 2px;
+    -moz-box-shadow:#97ed96 0px 3px 2px;
+	-webkit-box-shadow:#97ed96 0px 3px 2px;
+	background:#a5ffa3;
+	background:-moz-linear-gradient( center top, #a5ffa3 5%, #3deb80 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a5ffa3), color-stop(1, #3deb80) );
+	/* filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5ffa3', endColorstr='#3deb80'); */
+	background:-webkit-linear-gradient(#a5ffa3, #3deb80);
+	background:-ms-linear-gradient(#a5ffa3, #3deb80);
+	background:linear-gradient(#a5ffa3, #3deb80);
+	line-height: 30px;
+	-moz-border-radius:25px 25px 25px 0;
+	-webkit-border-radius:25px 25px 25px 0;
+	border-radius: 25px 25px 25px 0;
+	text-align: center;
+	vertical-align: middle;
+	/* display:inline-block; */
+    margin-left: 5px;
+    margin-top: 10px; 
+	font-size: 24px; 
+    font-weight: bold; 
+	width: 200px;
+    color: #215266;
+    height:30px;
+	padding:13px;
+	/* text-shadow:#a5c26e 2px 0px 0px; */
+	border-color:#6aab67;
+	border-width:2px;
+	border-style:solid;
+    cursor: pointer; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: -moz-none; 
+}
+
+.entrar:active {
+	box-shadow:#97ed96 0px 0 2px;
+	-moz-box-shadow:#97ed96 0px 0 2px;
+	-webkit-box-shadow:#97ed96 0px 0 2px;
+	position:relative;
+	top:3px
+}
+
+.entrar:hover {
+	background:#3deb80;
+	background:-o-linear-gradient(90deg, #3deb80, #a5ffa3);
+	background:-moz-linear-gradient( center top, #3deb80 5%, #a5ffa3 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3deb80), color-stop(1, #a5ffa3) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3deb80', endColorstr='#a5ffa3');
+	background:-webkit-linear-gradient(#3deb80, #a5ffa3);
+	background:-ms-linear-gradient(#3deb80, #a5ffa3);
+	background:linear-gradient(#3deb80, #a5ffa3);
+}
+
+.imginf {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 500px; 
+    height: 200px;
+    margin: 0 auto; 
+    background-color: #174e5c;
+    padding-top: 10px; 
+    margin-top: 7px; 
+}
+
+.imginf1 div, 
+.imginf2 div { 
+    background-image: url(../../../assets/imagenes/ch1.png);
+    background-position-x: 10px;
+    background-repeat: no-repeat;
+    height: 30px; 
+    color: #ffffff;
+    padding-left: 42px;
+    vertical-align: middle;
+    padding-top: 5px; 
+}
+
+.foo { 
+    color: #ffff94; 
+    font-family: 'bel2';
+    font-size: 18px;
+    text-align: center; 
+    width: 500px; 
+    margin: 3px auto;
+}
+
+.foo div { 
+    background-color: #313b71;
+    background-repeat: no-repeat; 
+    padding: 7px 0;  
+    background-position-y: 4px;
+} 
+
+.foo :nth-child(1) {
+    background-image: url(../../../assets/imagenes/tel.png); 
+    background-position-x: 160px;
+}
+ 
+.foo :nth-child(2) {
+    background-image: url(../../../assets/imagenes/mail.png); 
+    background-position-x: 120px;
+}
+
+/******************************************/
+@media only screen and (max-width: 505px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto 50% auto auto;
+    }
+
+    .imgsup {
+        grid-row: 1;
+    }
+
+    .imgcen {
+        grid-row: 2; 
+    }
+
+    .divimg1 {
+        width: auto; 
+        height: 300px; 
+    }
+
+    .divimgent {
+        grid-template-columns: 100%; 
+        grid-template-rows: 100% 100%; 
+        width: 100%; 
+        margin-top: -100px;
+    }
+    
+    .divimg2 {
+        grid-row: 1;
+    }
+
+    .entrar { 
+        grid-row: 2;
+        margin: 0 auto; 
+    }
+
+    .imginf {
+        grid-row: 3;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto; 
+        width: 100%; 
+        height: 350px;
+        margin-top: -50px; 
+    }
+    
+    .imginf1 {
+        grid-row: 1;
+        height: 170px;
+    }
+
+    .imginf2 {
+        grid-row: 2;
+        height: 170px; 
+    }
+
+    .foo {
+        grid-row: 4;
+        width: 100%;
+        display: grid; 
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto; 
+        margin-top: 5px; 
+    }
+
+    .foo :nth-child(1),
+    .foo :nth-child(2) {
+        background-position: center;
+        padding-top: 30px;
+        background-position-y: 2px;
+    }
+}

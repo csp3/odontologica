@@ -1,0 +1,65 @@
+:host {
+    --ancho-hor: 288px;
+}
+
+@font-face {
+    font-family: 'bel5';
+    src: url(/assets/fuentes/NotoSansJP-Regular.otf);
+}
+
+.divHorario {
+    border: 1px solid #dfbfbc; 
+	width: var(--ancho-hor); 
+    margin: 0 auto;
+}
+
+.tit {
+    font-family: 'bel5'; 
+    font-size: 13px; 
+    text-align: center;
+    /* border-bottom: 1px solid #d3bdbd;  */
+}
+
+.tit2-m,
+.tit2-t { 
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    font-family: 'bel5';
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid #c0a3a3;
+}
+
+.tit2-m {
+    margin-left: 1px;
+}
+
+.tit2-t {
+    margin-left: 2px;
+}
+
+.horario,
+.horario2 {
+    font-family: 'bel5';
+    font-size: 13px; 
+    width: calc(var(--ancho-hor)/2 - 1px);  
+    display: inline-table;
+    text-align: center;
+    border: 0px;
+    cursor: pointer;
+}
+
+.horario div,
+.horario2 div {
+    padding-top: 5px;
+}
+
+.horario2 {
+    border-left: 1px solid #c0a3a3;
+}
+
+/* scrollbar-width */
+::-webkit-scrollbar {
+    width: 0px;
+}

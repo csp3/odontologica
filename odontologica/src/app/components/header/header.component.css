@@ -1,0 +1,68 @@
+*{
+    font-family: arial;
+}
+
+#laimagen img {
+    width: 340px;
+}
+
+#laimagen,
+#divinputs,
+#divbotones {
+    text-align: center;
+}
+
+#divinputs input {
+    height: 25px;
+    width: 250px;
+    margin-top: 7px;
+    font-size: 15px;
+    border-radius: 3px; 
+}
+
+#divinputs div label {
+    display: inline-block;
+    width: 85px; 
+    text-align: right;
+}
+
+#divbotones div {
+    text-align: center;
+}
+
+#divenviar input {
+    width: 100px;
+    background-color: darkblue;
+}
+
+#enviar {
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:2px;
+	border:1px solid #4e6096;
+	color:#ffffff;
+	font-size:14px;
+	padding:10px 35px;
+	text-shadow:0px 1px 0px #283966;
+	cursor: pointer;
+}
+#enviar:hover {
+	background:linear-gradient(to bottom, #7c95b3 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+
+#limpiar {
+	background:linear-gradient(to bottom, #78bdc2 5%, #479e87 100%);
+	background-color:#7892c2;
+	border-radius:2px;
+	border:1px solid #939496;
+	color:#ffffff;
+	font-size:14px;
+	padding:5px 20px;
+	text-shadow:0px 1px 0px #286666;
+	cursor: pointer;
+}
+#limpiar:hover {
+	background:linear-gradient(to bottom, #a3b8d3 5%, #537e85 100%);
+	background-color:#476e9e;
+}

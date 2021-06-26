@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'bel4';
+    src: url(/assets/fuentes/NotoSansJP-Regular.otf);
+}
+
+.divCalendario {
+	padding: 0; 
+	width: 290px; 
+	margin: 0 auto; 
+}
+
+.calAnterior, 
+.calSiguiente {
+	border: 1px solid transparent;
+	background-color: #ededb7; 
+    cursor: pointer;
+	border-radius: 2px;
+	font-size: 30px;
+	text-align: center;
+}
+.calAnterior:hover, 
+.calSiguiente:hover {
+	border: 1px solid #2d76ff;  
+	background-color: #d2def8;
+}
+.tablaCal tr td div {
+	width: 100%;
+	display: inline-block;
+}
+.idmes {
+	font-size: 14px;
+}
+tr,td {
+	font-size: 12px;
+	font-family: 'bel4';
+	min-width: 35px;
+	height: 18px;
+	border: 1px solid #f2e3e3;
+	text-align: center;
+}
+.classdia {
+	height: 20px;
+	background-color: rgb(247, 247, 213);
+}
+
+.tablaCalMos:hover {
+	cursor: pointer;
+}
