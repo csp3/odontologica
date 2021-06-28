@@ -16,7 +16,11 @@ $noms = '';
 $apep = ''; 
 $apem = '';
 $rpta = []; 
-$elpaciente = '';
+$elpaciente = ''; 
+$fechadata = ''; 
+$horadata = '';  
+$numfilas = 0; 
+$resultado = ''; 
 
 switch ($methodHTTP) 
 {      
@@ -28,12 +32,15 @@ switch ($methodHTTP)
             $eldni = $dataentrante['eldni']; 
             $eltelefono = $dataentrante['eltelefono']; 
             $elpaciente = $dataentrante['elpaciente']; 
+            
+            $fechadata = $lafecha['data']; 
+            $horadata = $lahora['data']; 
 
-            if( $eldni != '' && $lafecha != "" && $lahora != "" && ($elpaciente !="si" || $elpaciente != "no") ) 
-                 echo verpost($eldni, $eltelefono, $lafecha, $lahora, $laconsulta, $elpaciente);  
+            if( $eldni != '' && $fechadata != "" && $horadata != "" && ($elpaciente =="si" || $elpaciente == "no") ) 
+                 echo verpost($eldni, $eltelefono, $fechadata, $horadata, $laconsulta, $elpaciente);  
             else 
             {
-                  $rpta = ['incorrecto', $eldni, $eltelefono, $lafecha, $lahora, $elpaciente]; 
+                  $rpta = ['incorrecto', $eldni, $eltelefono, $fechadata, $horadata, $elpaciente]; 
                   echo json_encode($rpta); 
             }
             
@@ -44,40 +51,40 @@ function verpost($eldni, $eltelefono, $lafecha, $lahora, $laconsulta, $elpacient
 { 
       $url="https://apiperu.dev/api/dni/".$eldni; 
       
-      //Inicia una nueva sesion cURL
+      /**Inicia una nueva sesion cURL*/ 
       $curl = curl_init($url); 
-      //Define opciones para nuestra sesion cURL
-      //direccion url a capturar. 
+      /**Define opciones para nuestra sesion cURL*/ 
+      /**direccion url a capturar.*/ 
       curl_setopt($curl, CURLOPT_URL, $url); 
-      //para devolver el resultado de la transferencia 
+      /**para devolver el resultado de la transferencia*/  
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-      //header 
+      /**header*/ 
       $headers = array(
          "Accept: application/json",
          "Authorization: Bearer e83be58e82defc0be701ae8751bcb68e7b81d2042978241f45169bed7d60d439",
       );
-      //array de campos a configurar para el header HTTP 
+      /**array de campos a configurar para el header HTTP*/  
       curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-      //for debug only!
-      //para verificar que el hostname coinicide con el proporcionado 
+      /**for debug only!*/
+      /**para verificar que el hostname coinicide con el proporcionado*/  
       curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false); 
-      //para que cURL verifique el peer del certificado 
+      /**para que cURL verifique el peer del certificado*/  
       curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); 
-      //ejecuta y devuelve un resultado 
+      /**ejecuta y devuelve un resultado*/  
       $resp = curl_exec($curl); 
-      //close 
+      /**close*/ 
       curl_close($curl);
 
-      //recibiendo json 
+      /**recibiendo json*/  
       $datospersonales = json_decode($resp, true); 
       //header('Content-type:text/html;charset=utf-8'); 
       
-      $apep = $datospersonales['data']['apellido_paterno'];
+      $apep = $datospersonales['data']['apellido_paterno']; 
       if(!is_null($apep))
       {
             $apem = $datospersonales['data']['apellido_materno'];
             $noms = $datospersonales['data']['nombres'];
-            $rpta = ['correcto', $eldni, $noms, $apep, $apem, $eltelefono, $lafecha['data'], $lahora['data'], $laconsulta, $elpaciente];  
+            $rpta = ['correcto', $eldni, $noms, $apep, $apem, $eltelefono, $lafecha, $lahora, $laconsulta, $elpaciente];  
                   
             // guardar en la db
             // $host = "190.233.231.68:3306";
@@ -93,40 +100,71 @@ function verpost($eldni, $eltelefono, $lafecha, $lahora, $laconsulta, $elpacient
             
             if($conexion->connect_error)
             {
+                  $conexion->close(); 
                   $rpta = ['error conectando a db', $eldni, $eltelefono, $lafecha, $lahora, $elpaciente];
                   return json_encode($rpta); 
             }
             else 
             {
-                  //Establecer la zona horaria predeterminada a usar
-                  date_default_timezone_set('America/Lima');
-                  $eldnin = utf8_decode($eldni);
-                  $eltelefonon = utf8_decode($eltelefono); 
-                  $elpacienten = utf8_decode($elpaciente); 
-                  $laconsultan = utf8_decode($laconsulta); 
-                  //query
-                  $consulta = sprintf("INSERT INTO citas (nombres,apepat,apemat,dni,telefono,fecha,hora,consulta,soypaciente) VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s')", 
-                        mysqli_real_escape_string($conexion,$noms),
-                        mysqli_real_escape_string($conexion,$apep),
-                        mysqli_real_escape_string($conexion,$apem),
-                        mysqli_real_escape_string($conexion,$eldnin),
-                        mysqli_real_escape_string($conexion,$eltelefonon),
-                        mysqli_real_escape_string($conexion,$lafecha['data']),
-                        mysqli_real_escape_string($conexion,$lahora['data']),
-                        mysqli_real_escape_string($conexion,$laconsultan),
-                        mysqli_real_escape_string($conexion,$elpacienten)
-                  );
+                  /**verificar si fehca y hora estan libres*/
+                  $consulta = sprintf("SELECT id FROM citas WHERE fecha='%s' AND hora='%s' AND estado='1' ", mysqli_real_escape_string($conexion, $lafecha),
+                  mysqli_real_escape_string($conexion, $lahora));
 
-                  if(!$conexion->query($consulta))
+                  $resultado = $conexion->query($consulta); 
+                  if(!$resultado)
                   {
-                        $rpta = ['error insertando a db', $eldni, $eltelefono, $lafecha, $lahora, $elpaciente];
+                        $conexion->close(); 
+                        $rpta = ['error consultando select en db', $eldni, $eltelefono, $lafecha, $lahora, $elpaciente];
                         return json_encode($rpta);
                   }
 
+                  $numfilas = $resultado->num_rows; 
+
+                  /**no hay duplicado*/
+                  if($numfilas > 0)
+                  {
+                        $conexion->close();
+                        $rpta = ['reservada', $eldni, $eltelefono, $lafecha, $lahora, $elpaciente];
+                        return json_encode($rpta); 
+                  }
+                  else 
+                  {
+                        /**Establecer la zona horaria predeterminada a usar*/ 
+                        date_default_timezone_set('America/Lima');
+                        $eldnin = utf8_decode($eldni);
+                        $eltelefonon = utf8_decode($eltelefono); 
+                        $elpacienten = utf8_decode($elpaciente); 
+                        $laconsultan = utf8_decode($laconsulta); 
+                        
+                        /**query*/ 
+                        $consulta = sprintf("INSERT INTO citas (nombres,apepat,apemat,dni,telefono,fecha,hora,consulta,soypaciente) VALUES('%s','%s','%s','%s','%s','%s','%s','%s','%s')", 
+                              mysqli_real_escape_string($conexion,$noms),
+                              mysqli_real_escape_string($conexion,$apep),
+                              mysqli_real_escape_string($conexion,$apem),
+                              mysqli_real_escape_string($conexion,$eldnin),
+                              mysqli_real_escape_string($conexion,$eltelefonon),
+                              mysqli_real_escape_string($conexion,$lafecha),
+                              mysqli_real_escape_string($conexion,$lahora),
+                              mysqli_real_escape_string($conexion,$laconsultan),
+                              mysqli_real_escape_string($conexion,$elpacienten)
+                        );
+                        
+                        if(!$conexion->query($consulta))
+                        {
+                              $conexion->close(); 
+                              $rpta = ['error insertando a db', $numfilas, $eltelefono, $lafecha, $lahora, $elpaciente];
+                              return json_encode($rpta);
+                        }
+                  } 
+
                   $conexion->close(); 
             }
+            return json_encode($rpta);
       }
-      
-      return json_encode($rpta); 
+      else 
+      {
+            $rpta = ['no-dni', $eldni, $eltelefono, $lafecha, $lahora, $elpaciente];  
+            return json_encode($rpta); 
+      }
 }
 ?>

@@ -10,6 +10,6 @@ export class ServpostlogeoService
 
   public post(url:string, body:any)
   {
-    return this.http.post(url, body);  
+    return this.http.post(url, body); 
   }
 }

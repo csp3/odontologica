@@ -69,7 +69,7 @@ export class LogeoComponent implements OnInit
     this.user = this._fb.group({ 
       dni: ["", [Validators.required, Validators.nullValidator, Validators.pattern('^[0-9]{8}$')]], 
       telefono: ["", [Validators.required, Validators.nullValidator, Validators.minLength(1), Validators.pattern('^[0-9]+$')]],
-      paci: ['si'],
+      paci: [''],
       consul: ['']
     });
   }
@@ -125,7 +125,11 @@ export class LogeoComponent implements OnInit
         } 
         else 
         { //console.log(aux);  
-          this.mentit.nativeElement.innerHTML = "INGRESE SUS DATOS CORRECTAMENTE";
+          if(aux[0] == 'reservada')
+            this.mentit.nativeElement.innerHTML = "FEHCA YA RESERVADA / CAMBIE HORA O FECHA";
+          else
+            this.mentit.nativeElement.innerHTML = "INGRESE SUS DATOS CORRECTAMENTE";
+          
           this.mencue.nativeElement.innerHTML = "<b>DNI:</b> "  + aux[1] + "<br>"; 
           this.mencue.nativeElement.innerHTML += "<b>Telefono:</b> " + aux[2] + "<br>";
           this.mencue.nativeElement.innerHTML += "<b>Fecha:</b> " + aux[3] + "<br>"; 
