@@ -8,234 +8,260 @@
     src: url(../../../assets/fuentes/Nunito-SemiBold.ttf);
 }
 
+@font-face {
+	font-family: 'bel1_1';
+    src: url(../../../assets/fuentes/JosefinSans.ttf);
+}
+
+@font-face {
+	font-family: 'bel1_2';
+    src: url(../../../assets/fuentes/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'bel1_3';
+    src: url(../../../assets/fuentes/CinzelDecorative-Regular.ttf);
+}
+
 .contenedor {
     font-family: 'bel1'; 
-    background-color: #6DB0C0;
+    margin-bottom: 50px; 
 }
 
-.imgsup {
+.divsuperior {
     text-align: center; 
-    background-color: #ae58ff;
-    color: #ffffff;
+    background-color: #5641A6; 
+    color: #e3d6d6;
+    width: 500px;
+    height: 135px; 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
-.imgsup :nth-child(1) {
-    font-size: 27px;  
+.divsuperior-img {
+    background-image: url(../../../assets/imagenes/logo-dento-2.png); 
+    background-size: cover; 
 }
 
-.imgsup :nth-child(3) {
-    font-size: 24px; 
+.celular {
+    margin-top: 33px;
+}
+
+.celular,
+.email {
+    font-family: bel1_2;
+    font-size: 17px; 
+    width: 100%;
+    padding: 2px 0;
+    /* background-color: #424fdd; */
+}
+
+.celular div,
+.email div {
+    display: inline-block; 
+    vertical-align: middle;
+} 
+
+.celularimagen,
+.mailimagen {
+    width:  16px; 
+    height: 16px;
+    background-size: cover;
+    align-items: center; 
+    margin-right: 5px;  
+}
+
+.celularimagen {
+    background-image: url(../../../assets/imagenes/tel.png);
+}
+
+.mailimagen {
+    background-image: url(../../../assets/imagenes/mail.png);
+}
+ 
+.divcentro {
+    margin-top: 25px;
+    margin-bottom: 20px; 
+}
+
+.divcentro-imagenprincipal {
+    background-image: url(../../../assets/imagenes/den2.jpg); 
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    width: 500px; 
+    height: 280px; 
+    margin: 0 auto;  
+    border-radius: 15px;
+}
+
+.divcentro-texto-1,
+.divcentro-texto-2 {
+    width: 500px; 
+    margin: 0 auto;
+    text-align: center;
+    font-size: 36px; 
+    padding-top: 20px;
+    font-family: bel1_1;
     font-weight: bold; 
 }
 
-.imgcen { 
-    background-color: #6DB0C0;
+.divcentro-texto-2 {
+    font-size: 28px; 
+    padding-top: 10px;
+    font-family: bel1; 
+    font-weight: normal;
+    font-style: italic; 
 }
 
-.divimg1 {
-    background-image: url(../../../assets/imagenes/den2.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 500px;  
-    height: 290px; 
-    margin: 0 auto; 
-}
-
-.divimgent {
-    display: grid;
-    grid-template-columns: 50% 50%; 
-    width: 500px; 
-    height: 95px; 
-    margin: 0 auto; 
-    background-color: #ffffff; 
-}
-
-.divimg2 {
-    background-image: url(../../../assets/imagenes/odonto2.png); 
-    background-size: 250px auto;
-    background-repeat: no-repeat; 
-    width: 250px;
-    margin: 0 auto;
-}
-
-.divbot {
-    background-color: #ffffff;
+.divcentro-botoncita {
+    margin-top: 38px;
 }
 
 .entrar {
-	font-family: 'bel1';
-	box-shadow:#97ed96 0px 3px 2px;
-    -moz-box-shadow:#97ed96 0px 3px 2px;
-	-webkit-box-shadow:#97ed96 0px 3px 2px;
-	background:#a5ffa3;
-	background:-moz-linear-gradient( center top, #a5ffa3 5%, #3deb80 100% );
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a5ffa3), color-stop(1, #3deb80) );
-	/* filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5ffa3', endColorstr='#3deb80'); */
-	background:-webkit-linear-gradient(#a5ffa3, #3deb80);
-	background:-ms-linear-gradient(#a5ffa3, #3deb80);
-	background:linear-gradient(#a5ffa3, #3deb80);
-	line-height: 30px;
-	-moz-border-radius:25px 25px 25px 0;
-	-webkit-border-radius:25px 25px 25px 0;
-	border-radius: 25px 25px 25px 0;
+	font-family: 'bel1_1';
+    background-color: #2632dd;
+    border: 1px solid #2632dd;
+	border-radius: 25px 25px 25px 25px;
 	text-align: center;
-	vertical-align: middle;
-	/* display:inline-block; */
-    margin-left: 5px;
-    margin-top: 10px; 
-	font-size: 24px; 
-    font-weight: bold; 
+    margin: 0 auto; 
+	font-size: 18px;
 	width: 200px;
-    color: #215266;
-    height:30px;
-	padding:13px;
-	/* text-shadow:#a5c26e 2px 0px 0px; */
-	border-color:#6aab67;
-	border-width:2px;
-	border-style:solid;
+    color: #fff;
+	padding: 16px 13px;
     cursor: pointer; 
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: -moz-none; 
-}
-
-.entrar:active {
-	box-shadow:#97ed96 0px 0 2px;
-	-moz-box-shadow:#97ed96 0px 0 2px;
-	-webkit-box-shadow:#97ed96 0px 0 2px;
-	position:relative;
-	top:3px
 }
 
 .entrar:hover {
-	background:#3deb80;
-	background:-o-linear-gradient(90deg, #3deb80, #a5ffa3);
-	background:-moz-linear-gradient( center top, #3deb80 5%, #a5ffa3 100% );
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3deb80), color-stop(1, #a5ffa3) );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3deb80', endColorstr='#a5ffa3');
-	background:-webkit-linear-gradient(#3deb80, #a5ffa3);
-	background:-ms-linear-gradient(#3deb80, #a5ffa3);
-	background:linear-gradient(#3deb80, #a5ffa3);
+	background:#fff;
+    border: 1px solid #2632dd;
+    color: #2632dd;
+    font-weight: bold;  
 }
 
-.imginf {
+.divinferior {
     display: grid;
     grid-template-columns: 50% 50%;
     width: 500px; 
-    height: 200px;
-    margin: 0 auto; 
-    background-color: #174e5c;
-    padding-top: 10px; 
-    margin-top: 7px; 
+    margin: 0 auto;  
 }
 
-.imginf1 div, 
-.imginf2 div { 
-    background-image: url(../../../assets/imagenes/ch1.png);
-    background-position-x: 10px;
-    background-repeat: no-repeat;
-    height: 30px; 
-    color: #ffffff;
-    padding-left: 42px;
-    vertical-align: middle;
-    padding-top: 5px; 
-}
 
-.foo { 
-    color: #ffff94; 
-    font-family: 'bel2';
-    font-size: 18px;
-    text-align: center; 
-    width: 500px; 
-    margin: 3px auto;
-}
-
-.foo div { 
-    background-color: #313b71;
-    background-repeat: no-repeat; 
-    padding: 7px 0;  
-    background-position-y: 4px;
+.divinferior-1 div, 
+.divinferior-2 div {
+    margin: 0 auto;
+    font-family: bel2;
+    font-size: 16px; 
 } 
 
-.foo :nth-child(1) {
-    background-image: url(../../../assets/imagenes/tel.png); 
-    background-position-x: 160px;
+.divinferior-1 div, 
+.divinferior-2 div { 
+    width: 200px;
+    height: 40px; 
+    margin-top: 7px;
+    color: #333;
+    border: 1px solid #727272; 
+    border-radius: 4px; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
 }
- 
-.foo :nth-child(2) {
-    background-image: url(../../../assets/imagenes/mail.png); 
-    background-position-x: 120px;
+
+.foo {
+    width: 500px; 
+    margin: 0 auto; 
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 0;  
+    background-color: #5641A6;
+    color: #fff; 
 }
+
+.foo div {
+    font-family: bel1_3;
+    font-size: 19px;
+    line-height: 30px;
+}
+
 
 /******************************************/
 @media only screen and (max-width: 505px) {
     .contenedor {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: auto 50% auto auto;
+        grid-template-rows: auto auto auto auto;
     }
 
-    .imgsup {
+    .divsuperior {
         grid-row: 1;
+        width:  100%;
+        height: auto; 
+        grid-template-columns: none;
+        grid-template-rows: auto 100%; 
     }
 
-    .imgcen {
-        grid-row: 2; 
+    .divsuperior-img {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100px;
     }
 
-    .divimg1 {
-        width: auto; 
-        height: 300px; 
-    }
-
-    .divimgent {
-        grid-template-columns: 100%; 
-        grid-template-rows: 100% 100%; 
-        width: 100%; 
-        margin-top: -100px;
+    .divsuperior-texto {
+        padding-bottom: 10px; 
     }
     
-    .divimg2 {
-        grid-row: 1;
+    .celular,
+    .email {
+        padding: 0;
+        margin: 0px;
+    } 
+
+    .divcentro {
+        grid-row: 2; 
+        width: 100%; 
+    }
+
+    
+
+    .divcentro-imagenprincipal { 
+        width: 100%; 
+        height: 220px;
+        background-size: cover; 
+    }
+
+    .divcentro-texto-1,
+    .divcentro-texto-2 {
+        width: 100%;
+        font-size: 27px; 
+    }
+
+    .divcentro-texto-2 {
+        font-size: 21px; 
     }
 
     .entrar { 
         grid-row: 2;
-        margin: 0 auto; 
+        font-size: 16px;
+        padding: 14px 11px; 
     }
 
-    .imginf {
+    .divinferior {
         grid-row: 3;
-        grid-template-columns: 100%;
+        grid-template-columns: none;
         grid-template-rows: auto auto; 
         width: 100%; 
-        height: 350px;
-        margin-top: -50px; 
     }
     
-    .imginf1 {
+    .divinferior-1 {
         grid-row: 1;
-        height: 170px;
     }
 
-    .imginf2 {
+    .divinferior-2 {
         grid-row: 2;
-        height: 170px; 
     }
 
     .foo {
-        grid-row: 4;
-        width: 100%;
-        display: grid; 
-        grid-template-columns: 100%;
-        grid-template-rows: auto auto; 
-        margin-top: 5px; 
-    }
-
-    .foo :nth-child(1),
-    .foo :nth-child(2) {
-        background-position: center;
-        padding-top: 30px;
-        background-position-y: 2px;
+        width: 100%; 
     }
 }
